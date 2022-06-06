@@ -1,1 +1,1 @@
-Mod adds vanilla style knifes
+Mod adds vanilla style knives
