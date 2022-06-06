@@ -1,0 +1,13 @@
+{
+  "item.vanilla_knifes.netherite_knife": "Netherite Knife",
+  "item.vanilla_knifes.diamond_knife": "Diamond Knife",
+  "item.vanilla_knifes.iron_knife": "Iron Knife",
+  "item.vanilla_knifes.golden_knife": "Golden Knife",
+  "item.vanilla_knifes.copper_knife": "Copper Knife",
+  "item.vanilla_knifes.stone_knife": "Stone Knife",
+  "item.vanilla_knifes.wooden_knife": "Wooden Knife",
+
+  "effect.vanilla_knifes.bleeding": "Bleeding",
+
+  "item.vanilla_knifes.cryomarble_knife": "Cryomarble Knife"
+}

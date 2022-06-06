@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "vanilla_knifes:item/cryomarble_knife"
+  }
+}

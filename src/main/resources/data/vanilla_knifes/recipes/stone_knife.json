@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "L",
+    "/"
+  ],
+  "key": {
+    "#": {
+      "tag": "minecraft:stone_tool_materials"
+    },
+    "L": {
+      "item": "minecraft:leather"
+    },
+    "/": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "vanilla_knifes:stone_knife",
+    "count": 1
+  }
+}

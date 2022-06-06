@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "vanilla_knifes:iron_knife"
+  },
+  "addition": {
+    "item": "winterly:cryomarble"
+  },
+  "result": {
+    "item": "vanilla_knifes:cryomarble_knife"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "vanilla_knifes",
+  "version": "${version}",
+
+  "name": "Banilla Knifes",
+  "description": "A mod that adds vanilla-styled knifes!",
+  "authors": [
+    "Theone_ss"
+  ],
+  "contact": {
+    "homepage": "https://modrinth.com/banilla-knifes",
+    "sources": "https://github.com/Theoness1/vanilla-knifes",
+    "issues": "https://github.com/Theoness1/vanilla-knifes/issues"
+  },
+
+  "license": "MIT",
+  "icon": "assets/vanilla_knifes/banillaknifespre.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "ru.theone_ss.vanilla_knifes.VanillaKnifes"
+    ]
+  },
+
+  "depends": {
+    "fabricloader": "*",
+    "fabric": "*",
+    "minecraft": "~1.18.2",
+    "java": ">=17"
+  }
+}
