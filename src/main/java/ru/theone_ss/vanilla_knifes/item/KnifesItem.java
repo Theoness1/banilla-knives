@@ -3,6 +3,8 @@ package ru.theone_ss.vanilla_knifes.item;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 import com.jamieswhiteshirt.reachentityattributes.ReachEntityAttributes;
+import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.entity.EntityGroup;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.EntityAttribute;
@@ -33,28 +35,27 @@ public class KnifesItem extends SwordItem {
     }
 
     @Override
-    public float getAttackDamage() {
-        return this.attackDamage;
-    }
-
-    @Override
     public Multimap<EntityAttribute, EntityAttributeModifier> getAttributeModifiers(EquipmentSlot slot) {
         return slot == EquipmentSlot.MAINHAND ? this.attributeModifiers : super.getAttributeModifiers(slot);
     }
 
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
         if(attacker instanceof PlayerEntity) {
+
+            float damageEnchantmentSharpness = EnchantmentHelper.getAttackDamage(stack, EntityGroup.DEFAULT);
+            // BANE_OF_ARTHROPODS and Smite doesn't work 0-0
+            // By default, even if the mob does not match the group, the number is displayed, but not added to the damage
             float yawDif = attacker.getYaw() - target.getYaw();
             if(yawDif > 0 && yawDif < 65) {
-                target.damage(DamageSource.sting(attacker), attackDamage*1.75F);
+                target.damage(DamageSource.sting(attacker), attackDamage * 1.75F + damageEnchantmentSharpness);
             }else if(yawDif < 0 && yawDif > -65) {
-                target.damage(DamageSource.sting(attacker), attackDamage*1.75F);
+                target.damage(DamageSource.sting(attacker), attackDamage * 1.75F + damageEnchantmentSharpness);
             }
             if(new Random().nextInt(0, 2) == 1) {
-                target.addStatusEffect(new StatusEffectInstance(VanillaKnifesEffects.BLEEDING, 16 * 20, 0), attacker);
+                target.addStatusEffect(new StatusEffectInstance(VanillaKnifesEffects.BLEEDING, 16 * 20, 0, false, false,true), attacker);
             }
             if(attacker.getMainHandStack().isOf(this) && attacker.getOffHandStack().isOf(this)) {
-                target.damage(DamageSource.sting(attacker), attackDamage * 2);
+                target.damage(DamageSource.sting(attacker), attackDamage * 2.5F + damageEnchantmentSharpness);
             }
         }
         return super.postHit(stack, target, attacker);
